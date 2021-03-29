@@ -1,48 +1,47 @@
-import Head from "next/head";
-import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
+import { FunctionComponent } from 'react'
+import Head from 'next/head'
+import styles from './layout.module.css'
+import utilStyles from '../styles/utils.module.css'
+import Link from 'next/link'
 
-const name = `Simon`;
-export const siteTitle = `Hi, I'm Simon!`;
+const name = `Simon`
+export const siteTitle = `Hi, I'm Simon!`
 
-export default function Layout({ children, home }) {
+type LayoutProps = {
+  home?: boolean
+  til?: boolean
+  title?: string
+  mono?: boolean
+  excerpt?: string
+}
+
+const Layout: FunctionComponent<LayoutProps> = ({ children, home, til, title, mono, excerpt }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
           rel="stylesheet"
         ></link>
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.now.sh/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="description" content={excerpt || `I'm Simon and I write code.`} />
+        <meta name="og:title" content={title ? `${title} - smn.dev` : siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
         <h2 className={utilStyles.headingLg}>
-          <Link href="/">
-            <a className={utilStyles.colorInherit}>Hi, I'm Simon!</a>
-          </Link>
+          <a className={utilStyles.colorInherit}>{title || siteTitle}</a>
         </h2>
       </header>
-      <main>{children}</main>
+      <main className={mono && 'mono'}>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
+          <Link href={til ? '/til' : '/'}>
+            <a>← Back to {til ? 'TIL' : 'home'}</a>
           </Link>
         </div>
       )}
     </div>
-  );
+  )
 }
+
+export default Layout

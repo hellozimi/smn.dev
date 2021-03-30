@@ -7,7 +7,7 @@ const Til = ({ posts }) => {
   return (
     <Layout mono title={'Today I Learned'}>
       {posts.map(post => (
-        <div>
+        <div key={post.id}>
           <Link href={`/til/${post.id}`}>
             <a>{post.title}</a>
           </Link>

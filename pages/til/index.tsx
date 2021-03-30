@@ -28,6 +28,6 @@ export const getStaticProps = async () => {
   }
 }
 
-export const excerpt = (str: string, len: number = 140) => str.substring(0, len) + '…'
+export const excerpt = (str: string, len: number = 140) => str.substring(0, len).trim() + '…'
 
 export default Til

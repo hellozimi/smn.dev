@@ -9,8 +9,16 @@ import gfm from 'remark-gfm'
 const tilDirectory = path.join(process.cwd(), 'posts/til')
 
 type Matter = {
-  date: Date
+  title?: string
+  date?: string
+  tags?: string[]
 }
+
+export type TILPost = {
+  id: string
+  content: string
+  raw: string
+} & Matter
 
 export const getAllTIL = async () => {
   const fileNames = fs.readdirSync(tilDirectory)
@@ -25,8 +33,8 @@ export const getAllTIL = async () => {
         id,
         content,
         raw: striptags(content),
-        ...(meta.data as Matter),
-      }
+        ...meta.data,
+      } as TILPost
     }),
   )
 
@@ -56,12 +64,10 @@ export const getTILPost = async (id: string) => {
 
   const meta = matter(fileContents)
   const content = (await remark().use(gfm).use(html).process(meta.content)).toString()
-
-  // Combine the data with the id and contentHtml
   return {
     id,
     content,
     raw: striptags(content),
     ...meta.data,
-  }
+  } as TILPost
 }

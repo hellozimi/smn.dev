@@ -2,12 +2,13 @@ import Layout, { siteTitle } from '../../components/layout'
 import { getAllTIL } from '../../lib/posts'
 import Link from 'next/link'
 import DateDisplay from '../../components/date'
+import styles from './index.module.css'
 
 const Til = ({ posts }) => {
   return (
     <Layout mono title={'Today I Learned'}>
       {posts.map(post => (
-        <div key={post.id}>
+        <div key={post.id} className={styles.item}>
           <Link href={`/til/${post.id}`}>
             <a>{post.title}</a>
           </Link>

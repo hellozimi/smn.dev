@@ -19,6 +19,16 @@ const Layout: FunctionComponent<LayoutProps> = ({ children, home, til, title, mo
   return (
     <div className={styles.container}>
       <Head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RBEYMPPZ3W" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RBEYMPPZ3W');`,
+          }}
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
           rel="stylesheet"

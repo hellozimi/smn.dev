@@ -26,19 +26,10 @@ $ xinput list
 ⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
     ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
     ↳ Power Button                              id=6    [slave  keyboard (3)]
-    ↳ Power Button                              id=7    [slave  keyboard (3)]
     ↳ Sleep Button                              id=8    [slave  keyboard (3)]
     ↳ RAMA WORKS RAMA WORKS U80-A               id=10   [slave  keyboard (3)]
-    ↳ RAMA WORKS RAMA WORKS U80-A Keyboard      id=12   [slave  keyboard (3)]
-    ↳ RAMA WORKS RAMA WORKS U80-A System Control        id=13   [slave  keyboard (3)]
     ↳ FiiO DigiHug USB Audio                    id=14   [slave  keyboard (3)]
     ↳ HD Pro Webcam C920                        id=15   [slave  keyboard (3)]
-    ↳ Logitech USB Receiver Keyboard            id=17   [slave  keyboard (3)]
-    ↳ Logitech USB Receiver System Control      id=19   [slave  keyboard (3)]
-    ↳ Eee PC WMI hotkeys                        id=20   [slave  keyboard (3)]
-    ↳ ELECOM TrackBall Mouse HUGE TrackBall     id=21   [slave  keyboard (3)]
-    ↳ RAMA WORKS RAMA WORKS U80-A Consumer Control      id=22   [slave  keyboard (3)]
-    ↳ Logitech USB Receiver Consumer Control    id=23   [slave  keyboard (3)]
 ```
 
 List all properties for your selected pointer device.

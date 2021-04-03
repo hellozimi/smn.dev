@@ -12,6 +12,7 @@ import 'prismjs/components/prism-graphql'
 import 'prismjs/components/prism-typescript'
 import ReadingTime from '../../components/readingtime'
 import TagIcon from '../../components/icons/tagicon'
+import Head from 'next/head'
 
 type TILPageParams = {
   post: TILPost
@@ -25,6 +26,9 @@ const TILPage: FunctionComponent<TILPageParams> = ({ post }) => {
   }, [])
   return (
     <Layout home={false} excerpt={excerpt(post.raw)} mono til title={post.title}>
+      <Head>
+        <title>TIL: {post.title} - smn.dev</title>
+      </Head>
       <div>
         <ReadingTime value={post.raw} />
         <div dangerouslySetInnerHTML={{ __html: post.content }} />

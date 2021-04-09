@@ -1,6 +1,8 @@
 ---
 title: "Keyboard shortcuts on mouse button on Ubuntu 20.10 (sxkhd)"
 date: "2021-04-08"
+tags:
+  - linux
 ---
 
 I have started using my [ELECOM Huge

@@ -31,7 +31,7 @@ This also works for subdomains, just keep in mind that as you're using the same 
   "redirects": [
     {
       "source": "/",
-      "destination": "another://other-example.com",
+      "destination": "https://another-example.com",
       "has": [
         {
           "type": "host",

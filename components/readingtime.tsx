@@ -19,11 +19,13 @@ const ReadingTime: React.FC<Props> = ({ value }) => {
 
 const readingTime = (str: string) => {
   const wpm = 200
-  const words = str
-    .trim()
-    .replace(/[^\w\s]|_/g, '')
-    .replace(/\s+/g, ' ')
-    .match(/\S+/g).length
+  const words = (
+    str
+      .trim()
+      .replace(/[^\w\s]|_/g, '')
+      .replace(/\s+/g, ' ')
+      .match(/\S+/g) || ''
+  ).length
 
   return words / wpm
 }

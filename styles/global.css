@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
 @font-face {
   font-family: 'ia-quattro';
   src: url('/fonts/ia-quattro-iAWriterQuattroS-Regular.eot');
@@ -19,6 +22,7 @@
   font-weight: 700;
   font-display: swap;
 }
+
 
 /*
 $display-wide: 1920

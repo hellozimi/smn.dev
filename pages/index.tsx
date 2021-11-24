@@ -3,7 +3,7 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
-export default () => {
+const Main = () => {
   return (
     <Layout home>
       <Head>
@@ -28,7 +28,7 @@ export default () => {
         </p>
         <ul className={utilStyles.list}>
           <li className={utilStyles.listItem}>
-            <a href="/til">Today I Learned</a>
+            <Link href="/til">Today I Learned</Link>
             <br />
             <small className={utilStyles.lightText}>My latest learnings in microblog format.</small>
           </li>
@@ -51,7 +51,7 @@ export default () => {
             <a href="https://instagram.com/smn.dev">instagram.com/smn.dev</a>
             <br />
             <small className={utilStyles.lightText}>
-              I'm occasionally posting things about my tech life
+              {`I'm occasionally posting things about my tech life`}
             </small>
           </li>
           <li className={utilStyles.listItem}>
@@ -64,3 +64,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default Main

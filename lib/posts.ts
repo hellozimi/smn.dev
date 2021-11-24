@@ -10,7 +10,7 @@ const tilDirectory = path.join(process.cwd(), 'posts/til')
 
 type Matter = {
   title?: string
-  date?: string
+  date: string
   tags?: string[]
 }
 
@@ -23,7 +23,7 @@ export type TILPost = {
 export const getAllTIL = async () => {
   const fileNames = fs.readdirSync(tilDirectory)
   const posts = await Promise.all(
-    fileNames.map(async fileName => {
+    fileNames.map(async (fileName) => {
       const id = fileName.replace(/\.md$/, '')
       const fullPath = path.join(tilDirectory, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -49,7 +49,7 @@ export const getAllTIL = async () => {
 
 export const getAllTILIds = () => {
   const fileNames = fs.readdirSync(tilDirectory)
-  return fileNames.map(fileName => {
+  return fileNames.map((fileName) => {
     return {
       params: {
         id: fileName.replace(/\.md$/, ''),

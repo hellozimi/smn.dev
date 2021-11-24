@@ -16,6 +16,7 @@ import 'prismjs/components/prism-javascript'
 import ReadingTime from '../../components/readingtime'
 import TagIcon from '../../components/icons/tagicon'
 import Head from 'next/head'
+import { GetStaticProps, GetStaticPropsResult } from 'next'
 
 type TILPageParams = {
   post: TILPost
@@ -58,8 +59,16 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params }) => {
-  const post = await getTILPost(params.id)
+type Props = {
+  id: string
+}
+
+export const getStaticProps: GetStaticProps<{}, Props> = async ({ params }) => {
+  const { id } = params || {}
+  if (!id) {
+    throw new Error('unable to get id from params')
+  }
+  const post = await getTILPost(id)
   return {
     props: {
       post,

@@ -12,10 +12,19 @@ export default () => {
       <section className={utilStyles.headingMd}>
         <p>
           I’m a software engineer living in{' '}
-          <Link href="https://www.google.com/maps/@59.3028168,18.0767966,14z"><a>Stockholm</a></Link>.
-            Currently working at <Link href="https://popdog.com"><a>Popdog</a></Link> writing Golang. My life
-              is mostly surrounded by <Link href="https://github.com/hellozimi"><a>code</a></Link> and
-          mechanical keyboards.
+          <Link href="https://www.google.com/maps/@59.3028168,18.0767966,14z">
+            <a>Stockholm</a>
+          </Link>
+          . Building products and helping companies with mobile, web front/backend development.
+          Previously at{' '}
+          <Link href="https://popdog.com">
+            <a>Popdog</a>
+          </Link>{' '}
+          writing Golang. My life is mostly surrounded by{' '}
+          <Link href="https://github.com/hellozimi">
+            <a>code</a>
+          </Link>{' '}
+          and mechanical keyboards.
         </p>
         <ul className={utilStyles.list}>
           <li className={utilStyles.listItem}>
@@ -37,14 +46,6 @@ export default () => {
             <a href="https://github.com/hellozimi">Github</a>
             <br />
             <small className={utilStyles.lightText}>I love open source</small>
-          </li>
-          <li className={utilStyles.listItem}>
-            <a href="https://popdog.com">Popdog</a>
-            <br />
-            <small className={utilStyles.lightText}>
-              I'm currently working at Popdog as a software engineer. A new way to find out what's
-              on in gaming and esports.
-            </small>
           </li>
           <li className={utilStyles.listItem}>
             <a href="https://instagram.com/smn.dev">instagram.com/smn.dev</a>

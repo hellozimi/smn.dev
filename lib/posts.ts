@@ -1,10 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { unified } from 'unified'
 import striptags from 'striptags'
-import remark from 'remark'
-import html from 'remark-html'
+import remarkParse from 'remark-parse'
 import gfm from 'remark-gfm'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
 
 const tilDirectory = path.join(process.cwd(), 'posts/til')
 
@@ -28,7 +30,14 @@ export const getAllTIL = async () => {
       const fullPath = path.join(tilDirectory, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
       const meta = matter(fileContents)
-      const content = (await remark().use(gfm).use(html).process(meta.content)).toString()
+      const content = (
+        await unified()
+          .use(remarkParse)
+          .use(gfm)
+          .use(remarkRehype)
+          .use(rehypeStringify)
+          .process(meta.content)
+      ).toString()
       return {
         id,
         content,
@@ -63,7 +72,15 @@ export const getTILPost = async (id: string) => {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   const meta = matter(fileContents)
-  const content = (await remark().use(gfm).use(html).process(meta.content)).toString()
+  const content = (
+    await unified()
+      .use(remarkParse)
+      .use(gfm)
+      .use(remarkRehype)
+      .use(rehypeStringify)
+      .process(meta.content)
+  ).toString()
+  console.log(content)
   return {
     id,
     content,

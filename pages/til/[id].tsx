@@ -1,6 +1,5 @@
-import Layout, { siteTitle } from '../../components/layout'
-import { getAllTIL, getTILPost, getAllTILIds, TILPost } from '../../lib/posts'
-import Link from 'next/link'
+import Layout from '../../components/layout'
+import { getTILPost, getAllTILIds, TILPost } from '../../lib/posts'
 import DateDisplay from '../../components/date'
 import { excerpt } from '.'
 import { useEffect, FunctionComponent } from 'react'
@@ -16,7 +15,7 @@ import 'prismjs/components/prism-javascript'
 import ReadingTime from '../../components/readingtime'
 import TagIcon from '../../components/icons/tagicon'
 import Head from 'next/head'
-import { GetStaticProps, GetStaticPropsResult } from 'next'
+import { GetStaticProps } from 'next'
 
 type TILPageParams = {
   post: TILPost

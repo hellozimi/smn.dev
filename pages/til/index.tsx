@@ -14,7 +14,7 @@ const Til: NextPage<Props> = ({ posts }) => {
   return (
     <Layout mono title={'Today I Learned'}>
       <Head>
-        <title>Today I Learned - smn.dev</title>
+        <title>Today I Learned - smn.lol</title>
       </Head>
       {posts.map((post) => (
         <div key={post.id} className={styles.item}>

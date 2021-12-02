@@ -31,7 +31,7 @@ const TILPage: FunctionComponent<TILPageParams> = ({ post }) => {
   return (
     <Layout home={false} excerpt={excerpt(post.raw)} mono til title={post.title}>
       <Head>
-        <title>TIL: {post.title} - smn.dev</title>
+        <title>TIL: {post.title} - smn.lol</title>
       </Head>
       <div>
         <ReadingTime value={post.raw} />
